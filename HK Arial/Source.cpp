@@ -26,6 +26,7 @@ int main()
 	int attemptToLocateTarget = 0;
 
 	cout << "\tWelcome to AI Drone Hunter 3000\n\n";
+	cout << "\n\nCreating an 8x8 search grid...\n\n";
 
 	//Checks to see if the guess is <, >, or = the actualTargetLocation
 	do
@@ -46,9 +47,10 @@ int main()
 			cout << "The AI target prediction was too low.\n\n";
 			searchGridLowNumber = attemptToLocateTarget + 1;
 		}
-		else
+		else if (attemptToLocateTarget == actualTargetLocation)
 		{
 			cout << "\nThat's it! The AI got it in " << tries << " guesses!\n";
+			cout << "\nDrone engaging target...\n\n";
 		}
 	} while (attemptToLocateTarget != actualTargetLocation);
 
